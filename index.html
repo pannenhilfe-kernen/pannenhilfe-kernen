@@ -61,6 +61,7 @@
       border-radius: 16px;
       padding: 6px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      flex-shrink: 0;
     }
 
     .brand-title {
@@ -85,6 +86,8 @@
       box-shadow: 0 12px 24px rgba(250, 204, 21, 0.25);
       transition: transform 0.2s ease, opacity 0.2s ease;
       white-space: nowrap;
+      display: inline-block;
+      text-align: center;
     }
 
     .call-button:hover {
@@ -163,6 +166,7 @@
       border-radius: 18px;
       font-weight: 800;
       transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+      text-align: center;
     }
 
     .btn-primary {
@@ -271,6 +275,7 @@
       font-size: 24px;
       font-weight: 700;
       box-shadow: 0 10px 24px rgba(250, 204, 21, 0.2);
+      flex-shrink: 0;
     }
 
     .service-preview-item h3 {
@@ -356,6 +361,7 @@
       background: #0f172a;
       color: #fde047;
       font-size: 26px;
+      flex-shrink: 0;
     }
 
     .card h3 {
@@ -452,6 +458,7 @@
       font-size: 20px;
       font-weight: 800;
       transition: transform 0.2s ease, opacity 0.2s ease;
+      display: block;
     }
 
     .contact-btn:hover {
@@ -469,6 +476,66 @@
       color: #fff;
     }
 
+    .calc-box {
+      max-width: 760px;
+      margin: 35px auto 0;
+      background: #fff;
+      color: #0f172a;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e2e8f0;
+    }
+
+    .calc-box h3 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .calc-box p {
+      margin: 0 0 18px;
+      color: #475569;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .calc-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+    }
+
+    .calc-row input {
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid #cbd5e1;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .calc-btn {
+      border: none;
+      background: #0f172a;
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: 14px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .calc-result {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 16px;
+      background: #f8fafc;
+      color: #0f172a;
+      font-size: 17px;
+      line-height: 1.7;
+      border: 1px solid #e2e8f0;
+    }
+
     footer {
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       background: #020617;
@@ -478,10 +545,14 @@
       padding: 26px 0;
       color: #94a3b8;
       font-size: 14px;
+      text-align: center;
     }
 
     @media (max-width: 1100px) {
-      .hero-grid,
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
       .cards,
       .steps {
         grid-template-columns: 1fr 1fr;
@@ -496,96 +567,169 @@
       .nav {
         flex-direction: column;
         align-items: flex-start;
+        gap: 14px;
+      }
+
+      .brand {
+        width: 100%;
+      }
+
+      .call-button {
+        width: 100%;
+        text-align: center;
       }
 
       .hero {
         min-height: auto;
       }
 
+      .hero-content {
+        padding: 50px 0 60px;
+      }
+
       .hero-grid,
       .cards,
       .steps,
       .contact-buttons,
-      .hero-stats {
+      .hero-stats,
+      .calc-row {
         grid-template-columns: 1fr;
       }
 
-      .hero-content {
-        padding: 60px 0 70px;
+      .hero h1 {
+        font-size: 40px;
+        line-height: 1.02;
       }
 
-      .hero h1 {
-        font-size: 44px;
+      .hero p {
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        text-align: center;
+      }
+
+      .section-padding {
+        padding: 60px 0;
+      }
+
+      .section-head {
+        margin-bottom: 30px;
       }
 
       .section-head h2,
-      .contact-wrap h2 {
-        font-size: 36px;
+      .contact-wrap h2,
+      .calc-box h3 {
+        font-size: 32px;
+      }
+
+      .section-head p,
+      .contact-wrap p,
+      .calc-box p {
+        font-size: 16px;
+        line-height: 1.6;
       }
 
       .brand-title {
         font-size: 22px;
       }
+
+      .brand-subtitle {
+        font-size: 14px;
+      }
+
+      .hero-card,
+      .hero-card-inner,
+      .contact-wrap,
+      .calc-box,
+      .card,
+      .step {
+        padding: 20px;
+      }
+
+      .card h3,
+      .step h3 {
+        font-size: 24px;
+      }
+
+      .card p,
+      .step p {
+        font-size: 16px;
+      }
+
+      .contact-btn {
+        width: 100%;
+        font-size: 18px;
+      }
+
+      .calc-row input,
+      .calc-btn {
+        width: 100%;
+      }
     }
-    .calc-box {
-  max-width: 760px;
-  margin: 35px auto 0;
-  background: #fff;
-  color: #0f172a;
-  border-radius: 24px;
-  padding: 24px;
-  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
-  border: 1px solid #e2e8f0;
-}
 
-.calc-box h3 {
-  margin: 0 0 10px;
-  font-size: 28px;
-  font-weight: 900;
-  text-align: center;
-}
+    @media (max-width: 480px) {
+      .container {
+        width: min(1200px, calc(100% - 20px));
+      }
 
-.calc-box p {
-  margin: 0 0 18px;
-  color: #475569;
-  line-height: 1.6;
-  text-align: center;
-}
+      .brand img {
+        width: 54px;
+        height: 54px;
+      }
 
-.calc-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 12px;
-}
+      .brand-title {
+        font-size: 20px;
+      }
 
-.calc-row input {
-  padding: 14px 16px;
-  border-radius: 14px;
-  border: 1px solid #cbd5e1;
-  font-size: 16px;
-  width: 100%;
-}
+      .hero h1 {
+        font-size: 34px;
+      }
 
-.calc-btn {
-  border: none;
-  background: #0f172a;
-  color: #fff;
-  padding: 14px 20px;
-  border-radius: 14px;
-  font-weight: 800;
-  cursor: pointer;
-}
+      .hero p {
+        font-size: 16px;
+      }
 
-.calc-result {
-  margin-top: 18px;
-  padding: 16px;
-  border-radius: 16px;
-  background: #f8fafc;
-  color: #0f172a;
-  font-size: 17px;
-  line-height: 1.7;
-  border: 1px solid #e2e8f0;
-}
+      .badge,
+      .mini-badge {
+        font-size: 12px;
+        padding: 8px 12px;
+      }
+
+      .btn-primary,
+      .btn-secondary,
+      .call-button,
+      .contact-btn,
+      .calc-btn {
+        padding: 14px 16px;
+        font-size: 16px;
+      }
+
+      .stat strong {
+        font-size: 24px;
+      }
+
+      .section-head h2,
+      .contact-wrap h2,
+      .calc-box h3 {
+        font-size: 28px;
+      }
+
+      .icon-box,
+      .card .icon-dark {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -599,7 +743,7 @@
         </div>
       </div>
 
-      <a class="call-button" href="#kontakt">Jetzt anrufen</a>
+      <a class="call-button" href="tel:+491234567890">Jetzt anrufen</a>
     </div>
   </header>
 
@@ -616,11 +760,10 @@
             Sie bekommen schnelle, direkte Unterstützung ohne Umwege.
           </p>
 
-         <div class="hero-actions">
-  <a class="btn-primary" href="tel:+491234567890">📞 Jetzt anrufen</a>
-  <a class="btn-secondary" href="#leistungen">Leistungen ansehen</a>
-  <a class="btn-secondary" href="#preise">Preise ansehen</a>
-
+          <div class="hero-actions">
+            <a class="btn-primary" href="tel:+491234567890">📞 Jetzt anrufen</a>
+            <a class="btn-secondary" href="#leistungen">Leistungen ansehen</a>
+            <a class="btn-secondary" href="#preise">Preise ansehen</a>
           </div>
 
           <div class="hero-stats">
@@ -760,147 +903,143 @@
     </div>
   </section>
 
-<!-- PREISE -->
-<section id="preise" class="light section-padding">
-  <div class="container">
-    <div class="section-head">
-      <div class="mini-badge">Transparent & fair</div>
-      <h2>Preise & Pauschalen</h2>
-      <p>
-        Klare Preise ohne unnötige Überraschungen. Der genaue Endpreis richtet sich nach Aufwand und Entfernung.
+  <section id="preise" class="light section-padding">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini-badge">Transparent & fair</div>
+        <h2>Preise & Pauschalen</h2>
+        <p>
+          Klare Preise ohne unnötige Überraschungen. Der genaue Endpreis richtet sich nach Aufwand und Entfernung.
+        </p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon-dark">🚗</div>
+          <h3>Anfahrt</h3>
+          <p>ab 15 € innerhalb Kernen</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-dark">⚡</div>
+          <h3>Starthilfe</h3>
+          <p>ab 30 €</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-dark">🛞</div>
+          <h3>Radwechsel</h3>
+          <p>ab 40 €</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-dark">📟</div>
+          <h3>OBD2 Diagnose</h3>
+          <p>ab 25 €</p>
+        </div>
+      </div>
+
+      <p style="text-align:center; color:#475569; margin-top:20px; font-size:16px;">
+        Hinweis: Außerhalb Kernen können zusätzliche Anfahrtskosten anfallen.
       </p>
-    </div>
 
-    <div class="cards">
-      <div class="card">
-        <div class="icon-dark">🚗</div>
-        <h3>Anfahrt</h3>
-        <p> bis 5 km:    10 €<br>
-            bis 10 km:   15 €<br>
-            bis 20 km:   20 €<br>
-            bis 30 km:   25 €<br>
-            über 30 km: +0,50 €/km</p>
-      </div>
+      <div class="calc-box">
+        <h3>Anfahrtspauschale berechnen</h3>
+        <p>
+          Geben Sie die ungefähre Entfernung in km ein, um die Anfahrtspauschale zu berechnen.
+        </p>
 
-      <div class="card">
-        <div class="icon-dark">⚡</div>
-        <h3>Starthilfe</h3>
-        <p>ab 30 €</p>
-      </div>
+        <div class="calc-row">
+          <input type="number" id="kmInput" placeholder="Entfernung in km, z. B. 12" min="0" step="1">
+          <button class="calc-btn" onclick="berechneAnfahrt()">Berechnen</button>
+        </div>
 
-      <div class="card">
-        <div class="icon-dark">🛞</div>
-        <h3>Radwechsel</h3>
-        <p>ab 40 €</p>
-      </div>
-
-      <div class="card">
-        <div class="icon-dark">📟</div>
-        <h3>OBD2 Diagnose</h3>
-        <p>ab 25 €</p>
+        <div id="calcResult" class="calc-result" style="display:none;"></div>
       </div>
     </div>
+  </section>
 
-    <p style="text-align:center; color:#475569; margin-top:20px; font-size:16px;">
-      Hinweis: Innerhalb Stetten-Kernen 5€ Anfahrtskosten.
-    </p>
-    <div class="calc-box">
-  <h3>Anfahrtspauschale berechnen</h3>
-  <p>
-    Geben Sie die ungefähre Entfernung in km ein, um die Anfahrtspauschale zu berechnen.
-  </p>
+  <section id="impressum" class="light section-padding" style="padding-top:0;">
+    <div class="container">
+      <div class="contact-wrap">
+        <h2>Impressum</h2>
+        <p style="text-align:left; max-width:none;">
+          <strong>Pannenhilfe Kernen</strong><br><br>
+          Max Mustermann<br>
+          Musterstraße 1<br>
+          71394 Kernen im Remstal<br><br>
 
-  <div class="calc-row">
-    <input type="number" id="kmInput" placeholder="Entfernung in km, z. B. 12" min="0" step="1">
-    <button class="calc-btn" onclick="berechneAnfahrt()">Berechnen</button>
-  </div>
+          Telefon: +49 123 4567890<br>
+          E-Mail: pannenhilfe.kernen@gmail.com<br><br>
 
-  <div id="calcResult" class="calc-result" style="display:none;"></div>
-</div>
-</section>
-
-<!-- IMPRESSUM -->
-<section id="impressum" class="light section-padding" style="padding-top:0;">
-  <div class="container">
-    <div class="contact-wrap">
-      <h2>Impressum</h2>
-      <p style="text-align:left; max-width:none;">
-        <strong>Pannenhilfe Kernen</strong><br><br>
-        Max Mustermann<br>
-        Musterstraße 1<br>
-        71394 Kernen im Remstal<br><br>
-
-        Telefon: +49 123 4567890<br>
-        E-Mail: pannenhilfe.kernen@gmail.com<br><br>
-
-        Angaben gemäß § 5 DDG<br>
-        Mobiler Pannen- & Radwechselservice
-      </p>
+          Angaben gemäß § 5 DDG<br>
+          Mobiler Pannen- & Radwechselservice
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- DATENSCHUTZ -->
-<section id="datenschutz" class="light section-padding" style="padding-top:0;">
-  <div class="container">
-    <div class="contact-wrap">
-      <h2>Datenschutz</h2>
-      <p style="text-align:left; max-width:none;">
-        Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br><br>
+  <section id="datenschutz" class="light section-padding" style="padding-top:0;">
+    <div class="container">
+      <div class="contact-wrap">
+        <h2>Datenschutz</h2>
+        <p style="text-align:left; max-width:none;">
+          Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br><br>
 
-        Max Mustermann<br>
-        Musterstraße 1<br>
-        71394 Kernen im Remstal<br>
-        E-Mail: pannenhilfe.kernen@gmail.com<br><br>
+          Max Mustermann<br>
+          Musterstraße 1<br>
+          71394 Kernen im Remstal<br>
+          E-Mail: pannenhilfe.kernen@gmail.com<br><br>
 
-        Beim Besuch dieser Website können technische Daten wie IP-Adresse, Browsertyp,
-        Datum und Uhrzeit automatisch verarbeitet werden.<br><br>
+          Beim Besuch dieser Website können technische Daten wie IP-Adresse, Browsertyp,
+          Datum und Uhrzeit automatisch verarbeitet werden.<br><br>
 
-        Wenn Sie Kontakt per Telefon, E-Mail oder WhatsApp aufnehmen, werden Ihre Angaben
-        zur Bearbeitung Ihrer Anfrage gespeichert und verwendet.<br><br>
+          Wenn Sie Kontakt per Telefon, E-Mail oder WhatsApp aufnehmen, werden Ihre Angaben
+          zur Bearbeitung Ihrer Anfrage gespeichert und verwendet.<br><br>
 
-        Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung
-        Ihrer personenbezogenen Daten.
-      </p>
+          Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung
+          Ihrer personenbezogenen Daten.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
+  <footer>
     <div class="container footer-inner">© 2026 Pannenhilfe Kernen</div>
   </footer>
+
   <script>
-function berechneAnfahrt() {
-  let km = document.getElementById("kmInput").value;
-  let result = document.getElementById("calcResult");
+    function berechneAnfahrt() {
+      let km = document.getElementById("kmInput").value;
+      let result = document.getElementById("calcResult");
 
-  km = parseFloat(km);
+      km = parseFloat(km);
 
-  if (isNaN(km) || km < 0) {
-    result.style.display = "block";
-    result.innerHTML = "Bitte eine gültige Entfernung in km eingeben.";
-    return;
-  }
+      if (isNaN(km) || km < 0) {
+        result.style.display = "block";
+        result.innerHTML = "Bitte eine gültige Entfernung in km eingeben.";
+        return;
+      }
 
-  let preis;
+      let preis;
 
-  if (km <= 5) {
-    preis = 10;
-  } else if (km <= 10) {
-    preis = 15;
-  } else if (km <= 20) {
-    preis = 20;
-  } else if (km <= 30) {
-    preis = 25;
-  } else {
-    preis = 25 + ((km - 30) * 0.5);
-  }
+      if (km <= 5) {
+        preis = 10;
+      } else if (km <= 10) {
+        preis = 15;
+      } else if (km <= 20) {
+        preis = 20;
+      } else if (km <= 30) {
+        preis = 25;
+      } else {
+        preis = 25 + ((km - 30) * 0.5);
+      }
 
-  result.style.display = "block";
-  result.innerHTML =
-    "<strong>Entfernung:</strong> " + km + " km<br>" +
-    "<strong>Anfahrt:</strong> " + preis.toFixed(2) + " €";
-}
-</script>
+      result.style.display = "block";
+      result.innerHTML =
+        "<strong>Entfernung:</strong> " + km + " km<br>" +
+        "<strong>Anfahrt:</strong> " + preis.toFixed(2) + " €";
+    }
+  </script>
 </body>
 </html>
