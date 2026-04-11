@@ -103,14 +103,15 @@
       align-items: center;
     }
 
-  .hero-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(rgba(2, 6, 23, 0.75), rgba(2, 6, 23, 0.75)),
-    url("hintergrund.jpg") no-repeat 30% center;
-  background-size: cover;
-}
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(2, 6, 23, 0.75), rgba(2, 6, 23, 0.75)),
+        url("hintergrund.jpg") no-repeat 30% center;
+      background-size: cover;
+    }
+
     .hero-content {
       position: relative;
       width: 100%;
@@ -335,6 +336,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 22px;
+      align-items: stretch;
     }
 
     .card {
@@ -344,6 +346,9 @@
       box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
       border: 1px solid #e2e8f0;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
 
     .card:hover {
@@ -375,6 +380,10 @@
       color: #475569;
       line-height: 1.7;
       font-size: 17px;
+    }
+
+    .card ul {
+      margin: 8px 0 0;
     }
 
     section.dark-band {
@@ -570,19 +579,6 @@
         gap: 14px;
       }
 
-@media (max-width: 820px) {
-  .hero-bg {
-    background-position: 25% top;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-bg {
-    background-position: 20% top;
-  }
-}
-
-      
       .brand {
         width: 100%;
       }
@@ -594,6 +590,11 @@
 
       .hero {
         min-height: auto;
+      }
+
+      .hero-bg {
+        background-position: 25% top;
+        background-size: cover;
       }
 
       .hero-content {
@@ -701,6 +702,11 @@
 
       .brand-title {
         font-size: 20px;
+      }
+
+      .hero-bg {
+        background-position: 20% top;
+        background-size: cover;
       }
 
       .hero h1 {
@@ -926,20 +932,33 @@
         </p>
       </div>
 
-      <div class="card">
-  <div class="icon-dark">🚗</div>
-  <h3>Anfahrt</h3>
+      <div class="cards">
+        <div class="card">
+          <div class="icon-dark">🚗</div>
+          <h3>Anfahrt</h3>
+          <div style="margin-top:10px; text-align:left; font-size:16px;">
+            <strong>Preise:</strong>
+            <ul style="margin:8px 0 0; padding-left:18px; color:#475569; line-height:1.6;">
+              <li>innerhalb Stetten-Kernen: 5 €</li>
+              <li>bis 5 km: 10 €</li>
+              <li>bis 10 km: 15 €</li>
+              <li>bis 20 km: 20 €</li>
+              <li>bis 30 km: 25 €</li>
+            </ul>
+          </div>
+        </div>
 
-  <div style="margin-top:10px; text-align:left;">
-    <strong>Preise:</strong>
-    <ul style="margin:10px 0 0; padding-left:18px; color:#475569;">
-      <li>innerhalb Stetten-Kernen: 5 €</li>
-      <li>bis 5 km: 10 €</li>
-      <li>bis 10 km: 15 €</li>
-      <li>bis 20 km: 20 €</li>
-      <li>bis 30 km: 25 €</li>
-    </ul>
-  </div>
+        <div class="card">
+          <div class="icon-dark">⚡</div>
+          <h3>Starthilfe</h3>
+          <p>ab 30 €</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-dark">🛞</div>
+          <h3>Radwechsel</h3>
+          <p>ab 40 €</p>
+        </div>
 
         <div class="card">
           <div class="icon-dark">📟</div>
@@ -947,10 +966,6 @@
           <p>ab 25 €</p>
         </div>
       </div>
-
-      <p style="text-align:center; color:#475569; margin-top:20px; font-size:16px;">
-        Hinweis: Außerhalb Kernen können zusätzliche Anfahrtskosten anfallen.
-      </p>
 
       <div class="calc-box">
         <h3>Anfahrtspauschale berechnen</h3>
@@ -1032,17 +1047,19 @@
 
       let preis;
 
-if (km <= 2) {
-  preis = 5;
-} else if (km <= 5) {
-  preis = 10;
-} else if (km <= 10) {
-  preis = 15;
-} else if (km <= 20) {
-  preis = 20;
-} else if (km <= 30) {
-  preis = 25;
-}
+      if (km <= 2) {
+        preis = 5;
+      } else if (km <= 5) {
+        preis = 10;
+      } else if (km <= 10) {
+        preis = 15;
+      } else if (km <= 20) {
+        preis = 20;
+      } else if (km <= 30) {
+        preis = 25;
+      } else {
+        preis = 25;
+      }
 
       result.style.display = "block";
       result.innerHTML =
