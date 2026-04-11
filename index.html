@@ -1036,17 +1036,17 @@
 
       let preis;
 
-      if (km <= 5) {
-        preis = 10;
-      } else if (km <= 10) {
-        preis = 15;
-      } else if (km <= 20) {
-        preis = 20;
-      } else if (km <= 30) {
-        preis = 25;
-      } else {
-        preis = 25 + ((km - 30) * 0.5);
-      }
+if (km <= 2) {
+  preis = 5;
+} else if (km <= 5) {
+  preis = 10;
+} else if (km <= 10) {
+  preis = 15;
+} else if (km <= 20) {
+  preis = 20;
+} else if (km <= 30) {
+  preis = 25;
+}
 
       result.style.display = "block";
       result.innerHTML =
