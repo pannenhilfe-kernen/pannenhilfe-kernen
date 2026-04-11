@@ -865,5 +865,38 @@
 <footer>
     <div class="container footer-inner">© 2026 Pannenhilfe Kernen</div>
   </footer>
+  <script>
+function berechneAnfahrt() {
+  let km = document.getElementById("kmInput").value;
+  let result = document.getElementById("calcResult");
+
+  km = parseFloat(km);
+
+  if (isNaN(km) || km < 0) {
+    result.style.display = "block";
+    result.innerHTML = "Bitte eine gültige Entfernung in km eingeben.";
+    return;
+  }
+
+  let preis;
+
+  if (km <= 5) {
+    preis = 10;
+  } else if (km <= 10) {
+    preis = 15;
+  } else if (km <= 20) {
+    preis = 20;
+  } else if (km <= 30) {
+    preis = 25;
+  } else {
+    preis = 25 + ((km - 30) * 0.5);
+  }
+
+  result.style.display = "block";
+  result.innerHTML =
+    "<strong>Entfernung:</strong> " + km + " km<br>" +
+    "<strong>Anfahrt:</strong> " + preis.toFixed(2) + " €";
+}
+</script>
 </body>
 </html>
