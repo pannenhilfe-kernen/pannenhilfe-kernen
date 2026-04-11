@@ -1,150 +1,225 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pannenhilfe Kernen</title>
+export default function PannenhilfeKernenWebsiteClean() {
+  const services = [
+    {
+      title: "Starthilfe",
+      text: "Schnelle Hilfe bei leerer Batterie direkt vor Ort in Kernen und Umgebung.",
+      icon: "⚡",
+    },
+    {
+      title: "Radwechsel vor Ort",
+      text: "Sommer- und Winterräder bequem bei Ihnen zuhause wechseln lassen.",
+      icon: "🛞",
+    },
+    {
+      title: "Pannenhilfe",
+      text: "Mobile Unterstützung bei kleineren Problemen – inkl. Reifen flicken (Nagel/Schraube) und schnelle Hilfe vor Ort.",
+      icon: "🚗",
+    },
+    {
+      title: "OBD2 Diagnose",
+      text: "Fehlerspeicher auslesen und löschen – schnelle Diagnose direkt bei Ihnen vor Ort.",
+      icon: "📟",
+    },
+  ];
 
-<style>
-body {
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#f5f5f5;
-}
+  return (
+    <div className="min-h-screen bg-slate-950 text-white">
+      <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/85 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <div className="flex items-center gap-4">
+            <img
+              src="/Logo.jpeg"
+              alt="Logo"
+              className="h-14 w-14 rounded-2xl bg-white object-contain p-1 shadow-lg"
+            />
+            <div>
+              <div className="text-lg font-black tracking-tight md:text-2xl">
+                Pannenhilfe Kernen
+              </div>
+              <div className="text-sm text-slate-300">Schnell & zuverlässig</div>
+            </div>
+          </div>
 
-/* HEADER */
-header {
-  background:#111;
-  color:white;
-  padding:15px 30px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+          <a
+            href="#kontakt"
+            className="rounded-2xl bg-yellow-400 px-5 py-3 text-sm font-bold text-slate-950 shadow-lg transition hover:scale-[1.02]"
+          >
+            Jetzt anrufen
+          </a>
+        </div>
+      </header>
 
-.logo {
-  height:50px;
-}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <img
+            src="/hintergrund.jpg"
+            alt="Kernen Hintergrund"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
 
-/* HERO MIT HINTERGRUND */
-.hero {
-  height:350px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:white;
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-[1.2fr_0.8fr] md:items-center md:py-28">
+          <div>
+            <div className="inline-flex rounded-full border border-red-400/30 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-300">
+              Mobile Hilfe in Kernen und Umgebung
+            </div>
+            <h1 className="mt-6 max-w-4xl text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
+              Schnelle Pannenhilfe und Radwechsel direkt vor Ort
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 md:text-xl">
+              Ob Starthilfe, Pannenhilfe oder Radwechsel bei Ihnen zuhause: Sie bekommen schnelle, direkte Unterstützung ohne Umwege.
+            </p>
 
-  background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('hintergrund.jpg') center/cover no-repeat;
-}
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="tel:+491234567890"
+                className="rounded-2xl bg-yellow-400 px-7 py-4 font-bold text-slate-950 shadow-2xl transition hover:scale-[1.02]"
+              >
+                📞 Jetzt anrufen
+              </a>
+              <a
+                href="#leistungen"
+                className="rounded-2xl border border-white/20 bg-white/10 px-7 py-4 font-bold text-white backdrop-blur transition hover:bg-white/15"
+              >
+                Leistungen ansehen
+              </a>
+            </div>
 
-.hero h1 {
-  font-size:40px;
-  margin:0;
-}
+            <div className="mt-10 grid max-w-2xl gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
+                <div className="text-2xl font-black text-yellow-300">Schnell</div>
+                <div className="mt-1 text-sm text-slate-300">Direkte Hilfe vor Ort</div>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
+                <div className="text-2xl font-black text-yellow-300">Lokal</div>
+                <div className="mt-1 text-sm text-slate-300">Kernen & Umgebung</div>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
+                <div className="text-2xl font-black text-yellow-300">Mobil</div>
+                <div className="mt-1 text-sm text-slate-300">Zu Ihnen nach Hause</div>
+              </div>
+            </div>
+          </div>
 
-.hero p {
-  margin-top:10px;
-}
+          <div className="rounded-[2rem] border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl">
+            <div className="rounded-[1.5rem] bg-slate-950/70 p-6">
+              <div className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-400">
+                Leistungen auf einen Blick
+              </div>
+              <div className="mt-5 space-y-4">
+                {services.map((service) => (
+                  <div
+                    key={service.title}
+                    className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:bg-white/10"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-yellow-400 text-2xl shadow-lg">
+                        {service.icon}
+                      </div>
+                      <div>
+                        <div className="text-xl font-bold text-white">{service.title}</div>
+                        <p className="mt-2 text-slate-300">{service.text}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-/* BUTTON */
-button {
-  margin-top:20px;
-  padding:12px 25px;
-  border:none;
-  border-radius:10px;
-  background:#ffcc00;
-  font-weight:bold;
-  cursor:pointer;
-}
+      <section id="leistungen" className="bg-slate-50 text-slate-900">
+        <div className="mx-auto max-w-7xl px-6 py-20">
+          <div className="mb-12 text-center">
+            <div className="inline-flex rounded-full bg-red-100 px-4 py-2 text-sm font-semibold text-red-700">
+              Klare Leistungen, fair und direkt
+            </div>
+            <h2 className="mt-5 text-4xl font-black md:text-5xl">Meine Leistungen</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
+              Mobile Hilfe ohne unnötige Werkstattwege – direkt dort, wo Sie Unterstützung brauchen.
+            </p>
+          </div>
 
-/* CONTENT */
-.container {
-  max-width:1000px;
-  margin:auto;
-  padding:40px 20px;
-}
+          <div className="grid gap-6 md:grid-cols-3">
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="rounded-[2rem] bg-white p-8 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 text-2xl text-yellow-300">
+                  {service.icon}
+                </div>
+                <h3 className="mt-6 text-2xl font-black">{service.title}</h3>
+                <p className="mt-3 text-slate-600">{service.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-.services {
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-}
+      <section className="bg-slate-950 text-white">
+        <div className="mx-auto max-w-7xl px-6 py-20">
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur">
+              <div className="text-4xl font-black text-yellow-300">01</div>
+              <h3 className="mt-4 text-2xl font-black">Anrufen</h3>
+              <p className="mt-3 text-slate-300">
+                Kurz schildern, was los ist, und ich mache mich auf den Weg.
+              </p>
+            </div>
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur">
+              <div className="text-4xl font-black text-yellow-300">02</div>
+              <h3 className="mt-4 text-2xl font-black">Vor Ort helfen</h3>
+              <p className="mt-3 text-slate-300">
+                Ich komme direkt zu Ihnen und kümmere mich um das Problem.
+              </p>
+            </div>
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur">
+              <div className="text-4xl font-black text-yellow-300">03</div>
+              <h3 className="mt-4 text-2xl font-black">Weiterfahren</h3>
+              <p className="mt-3 text-slate-300">
+                Schnell zurück auf die Straße – ohne unnötigen Stress.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-.card {
-  background:white;
-  padding:20px;
-  border-radius:15px;
-  flex:1;
-  min-width:250px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
+      <section id="kontakt" className="bg-slate-50 text-slate-900">
+        <div className="mx-auto max-w-5xl px-6 py-20">
+          <div className="rounded-[2rem] bg-white p-10 shadow-2xl ring-1 ring-slate-200">
+            <div className="text-center">
+              <h2 className="text-4xl font-black md:text-5xl">Kontakt</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
+                Für schnelle Hilfe erreichen Sie mich direkt telefonisch oder per WhatsApp.
+              </p>
+            </div>
 
-/* FOOTER */
-footer {
-  text-align:center;
-  padding:20px;
-  color:#666;
-}
-</style>
+            <div className="mt-10 grid gap-4 md:grid-cols-2">
+              <a
+                href="tel:+491234567890"
+                className="rounded-2xl bg-slate-950 px-6 py-5 text-center text-lg font-bold text-white shadow-lg transition hover:scale-[1.02]"
+              >
+                📞 +49 123 4567890
+              </a>
+              <a
+                href="https://wa.me/491234567890"
+                className="rounded-2xl bg-green-600 px-6 py-5 text-center text-lg font-bold text-white shadow-lg transition hover:scale-[1.02]"
+              >
+                WhatsApp schreiben
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-</head>
-
-<body>
-
-<header>
-  <div style="display:flex;align-items:center;gap:10px;">
-    <img src="Logo.jpeg" class="logo">
-    <div>
-      <b>Pannenhilfe Kernen</b><br>
-      <small>Schnell & zuverlässig</small>
+      <footer className="border-t border-white/10 bg-slate-950">
+        <div className="mx-auto max-w-7xl px-6 py-8 text-sm text-slate-400">
+          © 2026 Pannenhilfe Kernen
+        </div>
+      </footer>
     </div>
-  </div>
-
-  <button>Jetzt anrufen</button>
-</header>
-
-<div class="hero">
-  <h1>Mobile Pannenhilfe & Radwechsel</h1>
-  <p>Direkt vor Ort in Kernen und Umgebung</p>
-</div>
-
-<div class="container">
-
-  <h2>Leistungen</h2>
-
-  <div class="services">
-
-    <div class="card">
-      <h3>⚡ Starthilfe</h3>
-      <p>Schnelle Hilfe bei leerer Batterie.</p>
-    </div>
-
-    <div class="card">
-      <h3>🛞 Radwechsel</h3>
-      <p>Sommer- und Winterräder vor Ort wechseln.</p>
-    </div>
-
-    <div class="card">
-      <h3>🚗⚠️ Pannenhilfe</h3>
-      <p>Reifen flicken (Nagel/Schraube) und Hilfe bei Problemen.</p>
-    </div>
-
-    <div class="card">
-      <h3>📟 OBD2 Diagnose</h3>
-      <p>Fehlerspeicher auslesen und löschen.</p>
-    </div>
-
-  </div>
-
-</div>
-
-<footer>
-© 2026 Pannenhilfe Kernen
-</footer>
-
-</body>
-</html>
+  );
+}
