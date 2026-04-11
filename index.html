@@ -741,7 +741,19 @@
     <p style="text-align:center; color:#475569; margin-top:20px; font-size:16px;">
       Hinweis: Außerhalb Kernen können zusätzliche Anfahrtskosten anfallen.
     </p>
+    <div class="calc-box">
+  <h3>Anfahrtspauschale berechnen</h3>
+  <p>
+    Geben Sie die ungefähre Entfernung in km ein, um die Anfahrtspauschale zu berechnen.
+  </p>
+
+  <div class="calc-row">
+    <input type="number" id="kmInput" placeholder="Entfernung in km, z. B. 12" min="0" step="1">
+    <button class="calc-btn" onclick="berechneAnfahrt()">Berechnen</button>
   </div>
+
+  <div id="calcResult" class="calc-result" style="display:none;"></div>
+</div>
 </section>
 
 <!-- IMPRESSUM -->
