@@ -615,7 +615,7 @@
 
     .contact-buttons {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 16px;
       margin-top: 34px;
     }
@@ -624,7 +624,7 @@
       padding: 18px 24px;
       text-align: center;
       border-radius: 20px;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 800;
       transition: transform 0.2s ease, opacity 0.2s ease;
       display: block;
@@ -638,6 +638,31 @@
     .contact-btn.green {
       background: #16a34a;
       color: #fff;
+    }
+
+    .opening-box {
+      margin-top: 30px;
+      text-align: center;
+      color: #475569;
+    }
+
+    .opening-box h3 {
+      margin-bottom: 10px;
+      font-size: 24px;
+      color: #0f172a;
+    }
+
+    .opening-box p {
+      margin: 0;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .opening-note {
+      margin-top: 14px !important;
+      font-size: 14px !important;
+      line-height: 1.7 !important;
     }
 
     .legal-wrap {
@@ -690,6 +715,10 @@
       .steps,
       .trust-grid {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-buttons {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .hero h1 {
@@ -942,7 +971,7 @@
 
       <div class="top-actions">
         <a class="call-button" href="tel:+491234567890">Jetzt anrufen</a>
-        <a class="wa-button" href="https://wa.me/491234567890?text=Hallo,%20ich%20brauche%20mobile%20Pannenhilfe%20in%20Kernen.">WhatsApp</a>
+        <a class="wa-button" href="https://wa.me/491234567890?text=Hallo,%20ich%20m%C3%B6chte%20eine%20Anfrage%20stellen:%0A%0A1%EF%B8%8F%E2%83%A3%20Pannenhilfe%0A2%EF%B8%8F%E2%83%A3%20Radwechsel%0A%0ABitte%20einfach%20die%20passende%20Nummer%20senden.">WhatsApp</a>
       </div>
     </div>
   </header>
@@ -963,7 +992,7 @@
 
           <div class="hero-actions">
             <a class="btn-primary" href="tel:+491234567890">📞 Jetzt anrufen</a>
-            <a class="btn-secondary" href="https://wa.me/491234567890?text=Hallo,%20ich%20brauche%20mobile%20Pannenhilfe%20in%20Kernen.">WhatsApp schreiben</a>
+            <a class="btn-secondary" href="#kontakt">Kontaktmöglichkeiten</a>
             <a class="btn-secondary" href="#preise">Preise ansehen</a>
           </div>
 
@@ -1216,8 +1245,39 @@
         </p>
 
         <div class="contact-buttons">
-          <a class="contact-btn dark" href="tel:+491234567890">📞 +49 123 4567890</a>
-          <a class="contact-btn green" href="https://wa.me/491234567890?text=Hallo,%20ich%20brauche%20mobile%20Pannenhilfe%20in%20Kernen.">WhatsApp schreiben</a>
+          <a class="contact-btn dark" href="tel:+491234567890">
+            📞 Anrufen
+          </a>
+
+          <a class="contact-btn green"
+             href="https://wa.me/491234567890?text=Hallo,%20ich%20m%C3%B6chte%20eine%20Anfrage%20stellen:%0A%0A1%EF%B8%8F%E2%83%A3%20Pannenhilfe%0A2%EF%B8%8F%E2%83%A3%20Radwechsel%0A%0ABitte%20einfach%20die%20passende%20Nummer%20senden.">
+            💬 WhatsApp Anfrage
+          </a>
+
+          <a class="contact-btn dark"
+             href="mailto:pannenhilfe.kernen@gmail.com?subject=Pannenhilfe%20Anfrage&body=Hallo,%0A%0Aich%20ben%C3%B6tige%20Pannenhilfe.%0A%0AName:%20%0ATelefonnummer:%20%0AStandort:%20%0AFahrzeug:%20%0AProblem:%20%0ADringlichkeit:%20%0A%0AVielen%20Dank.">
+            🚗 E-Mail Pannenhilfe
+          </a>
+
+          <a class="contact-btn dark"
+             href="mailto:pannenhilfe.kernen@gmail.com?subject=Radwechsel%20Anfrage&body=Hallo,%0A%0Aich%20m%C3%B6chte%20einen%20Radwechsel.%0A%0AName:%20%0ATelefonnummer:%20%0AAdresse:%20%0AFahrzeug:%20%0AFelgengr%C3%B6%C3%9Fe:%20%0AWunschtermin:%20%0A%0AVielen%20Dank.">
+            🛞 E-Mail Radwechsel
+          </a>
+        </div>
+
+        <div class="opening-box">
+          <h3>Öffnungszeiten</h3>
+
+          <p style="line-height:1.8;">
+            Montag – Freitag: 17:00 – 20:00 Uhr<br>
+            Samstag: 09:00 – 16:00 Uhr<br>
+            Sonntag &amp; Feiertage: nur nach Vereinbarung
+          </p>
+
+          <p class="opening-note">
+            📞 Sollte ich telefonisch nicht erreichbar sein, bin ich entweder im Einsatz oder aktuell außer Dienst.
+            Schreiben Sie mir einfach per 💬 WhatsApp oder ✉️ E-Mail – ich melde mich schnellstmöglich zurück.
+          </p>
         </div>
       </div>
     </div>
@@ -1274,7 +1334,7 @@
 
   <div class="mobile-bar">
     <a class="call" href="tel:+491234567890">📞 Anrufen</a>
-    <a class="whatsapp" href="https://wa.me/491234567890?text=Hallo,%20ich%20brauche%20mobile%20Pannenhilfe%20in%20Kernen.">WhatsApp</a>
+    <a class="whatsapp" href="https://wa.me/491234567890?text=Hallo,%20ich%20m%C3%B6chte%20eine%20Anfrage%20stellen:%0A%0A1%EF%B8%8F%E2%83%A3%20Pannenhilfe%0A2%EF%B8%8F%E2%83%A3%20Radwechsel%0A%0ABitte%20einfach%20die%20passende%20Nummer%20senden.">WhatsApp</a>
   </div>
 
   <script>
