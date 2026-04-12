@@ -26,7 +26,7 @@
     }
 
     .container {
-      width: min(1200px, calc(100% - 32px));
+      width: min(1240px, calc(100% - 32px));
       margin: 0 auto;
     }
 
@@ -34,7 +34,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       background: rgba(2, 6, 23, 0.88);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
@@ -51,6 +51,7 @@
       display: flex;
       align-items: center;
       gap: 14px;
+      min-width: 0;
     }
 
     .brand img {
@@ -65,40 +66,61 @@
     }
 
     .brand-title {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 900;
-      line-height: 1;
+      line-height: 1.05;
       letter-spacing: -0.02em;
     }
 
     .brand-subtitle {
       margin-top: 6px;
       color: #cbd5e1;
-      font-size: 15px;
+      font-size: 14px;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .call-button,
+    .wa-button {
+      display: inline-block;
+      text-align: center;
+      font-weight: 800;
+      padding: 14px 20px;
+      border-radius: 16px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      white-space: nowrap;
     }
 
     .call-button {
       background: #facc15;
       color: #111827;
-      font-weight: 700;
-      padding: 14px 22px;
-      border-radius: 16px;
       box-shadow: 0 12px 24px rgba(250, 204, 21, 0.25);
-      transition: transform 0.2s ease, opacity 0.2s ease;
-      white-space: nowrap;
-      display: inline-block;
-      text-align: center;
     }
 
-    .call-button:hover {
+    .wa-button {
+      background: #16a34a;
+      color: white;
+      box-shadow: 0 12px 24px rgba(22, 163, 74, 0.2);
+    }
+
+    .call-button:hover,
+    .wa-button:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .contact-btn:hover,
+    .faq-item:hover {
       transform: translateY(-1px);
-      opacity: 0.95;
+      opacity: 0.96;
     }
 
     .hero {
       position: relative;
       overflow: hidden;
-      min-height: 760px;
+      min-height: 860px;
       display: flex;
       align-items: center;
     }
@@ -107,9 +129,15 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(rgba(2, 6, 23, 0.75), rgba(2, 6, 23, 0.75)),
+        linear-gradient(rgba(2, 6, 23, 0.78), rgba(2, 6, 23, 0.8)),
         url("hintergrund.jpg") no-repeat 30% center;
       background-size: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(2, 6, 23, 0.92), rgba(2, 6, 23, 0.45));
     }
 
     .hero-content {
@@ -120,8 +148,8 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 42px;
       align-items: center;
     }
 
@@ -138,11 +166,11 @@
 
     .hero h1 {
       margin: 20px 0 0;
-      font-size: 72px;
+      font-size: 74px;
       line-height: 0.95;
       letter-spacing: -0.04em;
       font-weight: 900;
-      max-width: 760px;
+      max-width: 820px;
     }
 
     .hero p {
@@ -183,25 +211,19 @@
       backdrop-filter: blur(8px);
     }
 
-    .btn-primary:hover,
-    .btn-secondary:hover {
-      transform: translateY(-1px);
-      opacity: 0.96;
-    }
-
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
-      margin-top: 34px;
-      max-width: 720px;
+      margin-top: 36px;
+      max-width: 760px;
     }
 
     .stat {
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
-      border-radius: 20px;
+      border-radius: 22px;
       padding: 18px;
     }
 
@@ -217,6 +239,7 @@
       margin-top: 6px;
       color: #cbd5e1;
       font-size: 14px;
+      line-height: 1.5;
     }
 
     .hero-card {
@@ -229,7 +252,7 @@
     }
 
     .hero-card-inner {
-      background: rgba(2, 6, 23, 0.7);
+      background: rgba(2, 6, 23, 0.72);
       border-radius: 26px;
       padding: 26px;
     }
@@ -256,11 +279,12 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 22px;
       padding: 18px;
-      transition: background 0.2s ease;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
 
     .service-preview-item:hover {
       background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
     }
 
     .icon-box {
@@ -298,7 +322,7 @@
     }
 
     .section-padding {
-      padding: 90px 0;
+      padding: 95px 0;
     }
 
     .section-head {
@@ -326,7 +350,7 @@
 
     .section-head p {
       margin: 18px auto 0;
-      max-width: 760px;
+      max-width: 780px;
       color: #475569;
       font-size: 19px;
       line-height: 1.7;
@@ -383,10 +407,40 @@
     }
 
     .card ul {
-      margin: 8px 0 0;
+      margin: 10px 0 0;
       padding-left: 18px;
       color: #475569;
-      line-height: 1.6;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .trust-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 28px;
+      padding: 28px;
+      backdrop-filter: blur(8px);
+    }
+
+    .trust-card strong {
+      display: block;
+      font-size: 26px;
+      color: #fde047;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .trust-card p {
+      margin: 0;
+      color: #cbd5e1;
+      line-height: 1.7;
+      font-size: 17px;
     }
 
     section.dark-band {
@@ -428,8 +482,99 @@
       line-height: 1.7;
     }
 
-    .contact-wrap {
+    .calc-box {
+      max-width: 760px;
+      margin: 35px auto 0;
+      background: #fff;
+      color: #0f172a;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e2e8f0;
+    }
+
+    .calc-box h3 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .calc-box p {
+      margin: 0 0 18px;
+      color: #475569;
+      line-height: 1.6;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .calc-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+    }
+
+    .calc-row input {
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid #cbd5e1;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .calc-btn {
+      border: none;
+      background: #0f172a;
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: 14px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .calc-result {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 16px;
+      background: #f8fafc;
+      color: #0f172a;
+      font-size: 17px;
+      line-height: 1.7;
+      border: 1px solid #e2e8f0;
+    }
+
+    .faq-grid {
+      display: grid;
+      gap: 16px;
       max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 24px;
+      color: #0f172a;
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .faq-item p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .contact-wrap {
+      max-width: 980px;
       margin: 0 auto;
       background: #fff;
       border-radius: 34px;
@@ -473,11 +618,6 @@
       display: block;
     }
 
-    .contact-btn:hover {
-      transform: translateY(-1px);
-      opacity: 0.96;
-    }
-
     .contact-btn.dark {
       background: #0f172a;
       color: #fff;
@@ -488,64 +628,29 @@
       color: #fff;
     }
 
-    .calc-box {
-      max-width: 760px;
-      margin: 35px auto 0;
+    .legal-wrap {
+      max-width: 980px;
+      margin: 0 auto;
       background: #fff;
-      color: #0f172a;
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
+      border-radius: 34px;
+      padding: 40px;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
       border: 1px solid #e2e8f0;
+      color: #0f172a;
     }
 
-    .calc-box h3 {
-      margin: 0 0 10px;
-      font-size: 28px;
+    .legal-wrap h2 {
+      margin: 0 0 20px;
+      text-align: center;
+      font-size: 42px;
       font-weight: 900;
-      text-align: center;
     }
 
-    .calc-box p {
-      margin: 0 0 18px;
+    .legal-wrap p {
+      margin: 0;
       color: #475569;
-      line-height: 1.6;
-      text-align: center;
-    }
-
-    .calc-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 12px;
-    }
-
-    .calc-row input {
-      padding: 14px 16px;
-      border-radius: 14px;
-      border: 1px solid #cbd5e1;
+      line-height: 1.8;
       font-size: 16px;
-      width: 100%;
-    }
-
-    .calc-btn {
-      border: none;
-      background: #0f172a;
-      color: #fff;
-      padding: 14px 20px;
-      border-radius: 14px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .calc-result {
-      margin-top: 18px;
-      padding: 16px;
-      border-radius: 16px;
-      background: #f8fafc;
-      color: #0f172a;
-      font-size: 17px;
-      line-height: 1.7;
-      border: 1px solid #e2e8f0;
     }
 
     footer {
@@ -560,13 +665,18 @@
       text-align: center;
     }
 
+    .mobile-bar {
+      display: none;
+    }
+
     @media (max-width: 1100px) {
       .hero-grid {
         grid-template-columns: 1fr;
       }
 
       .cards,
-      .steps {
+      .steps,
+      .trust-grid {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -586,9 +696,14 @@
         width: 100%;
       }
 
-      .call-button {
+      .top-actions {
         width: 100%;
-        text-align: center;
+        flex-direction: column;
+      }
+
+      .call-button,
+      .wa-button {
+        width: 100%;
       }
 
       .hero {
@@ -597,7 +712,6 @@
 
       .hero-bg {
         background-position: 25% top;
-        background-size: cover;
       }
 
       .hero-content {
@@ -609,7 +723,8 @@
       .steps,
       .contact-buttons,
       .hero-stats,
-      .calc-row {
+      .calc-row,
+      .trust-grid {
         grid-template-columns: 1fr;
       }
 
@@ -631,7 +746,6 @@
       .btn-primary,
       .btn-secondary {
         width: 100%;
-        text-align: center;
       }
 
       .section-padding {
@@ -644,7 +758,8 @@
 
       .section-head h2,
       .contact-wrap h2,
-      .calc-box h3 {
+      .calc-box h3,
+      .legal-wrap h2 {
         font-size: 32px;
       }
 
@@ -668,17 +783,22 @@
       .contact-wrap,
       .calc-box,
       .card,
-      .step {
+      .step,
+      .trust-card,
+      .legal-wrap,
+      .faq-item {
         padding: 20px;
       }
 
       .card h3,
-      .step h3 {
+      .step h3,
+      .faq-item h3 {
         font-size: 24px;
       }
 
       .card p,
-      .step p {
+      .step p,
+      .trust-card p {
         font-size: 16px;
       }
 
@@ -691,11 +811,49 @@
       .calc-btn {
         width: 100%;
       }
+
+      .mobile-bar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 10px;
+        background: rgba(2, 6, 23, 0.95);
+        backdrop-filter: blur(12px);
+        border-top: 1px solid rgba(255,255,255,0.08);
+        z-index: 1200;
+      }
+
+      .mobile-bar a {
+        display: block;
+        text-align: center;
+        padding: 14px 12px;
+        border-radius: 14px;
+        font-size: 15px;
+        font-weight: 800;
+      }
+
+      .mobile-bar .call {
+        background: #facc15;
+        color: #111827;
+      }
+
+      .mobile-bar .whatsapp {
+        background: #16a34a;
+        color: #fff;
+      }
+
+      footer {
+        padding-bottom: 84px;
+      }
     }
 
     @media (max-width: 480px) {
       .container {
-        width: min(1200px, calc(100% - 20px));
+        width: min(1240px, calc(100% - 20px));
       }
 
       .brand img {
@@ -709,7 +867,6 @@
 
       .hero-bg {
         background-position: 20% top;
-        background-size: cover;
       }
 
       .hero h1 {
@@ -729,6 +886,7 @@
       .btn-primary,
       .btn-secondary,
       .call-button,
+      .wa-button,
       .contact-btn,
       .calc-btn {
         padding: 14px 16px;
@@ -741,7 +899,8 @@
 
       .section-head h2,
       .contact-wrap h2,
-      .calc-box h3 {
+      .calc-box h3,
+      .legal-wrap h2 {
         font-size: 28px;
       }
 
@@ -765,12 +924,16 @@
         </div>
       </div>
 
-      <a class="call-button" href="tel:+491234567890">Jetzt anrufen</a>
+      <div class="top-actions">
+        <a class="call-button" href="tel:+491234567890">Jetzt anrufen</a>
+        <a class="wa-button" href="https://wa.me/491234567890?text=Hallo,%20ich%20brauche%20mobile%20Pannenhilfe%20in%20Kernen.">WhatsApp</a>
+      </div>
     </div>
   </header>
 
   <section class="hero">
     <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
 
     <div class="container hero-content">
       <div class="hero-grid">
@@ -778,28 +941,28 @@
           <div class="badge">Mobile Hilfe in Kernen und Umgebung</div>
           <h1>Mobiler Pannen- &amp; Radwechselservice in Kernen und Umgebung</h1>
           <p>
-            Ob Starthilfe, Pannenhilfe oder Radwechsel bei Ihnen zuhause:
+            Ob Starthilfe, Pannenhilfe, OBD2 Diagnose oder Radwechsel bei Ihnen zuhause:
             Sie bekommen schnelle, direkte Unterstützung ohne Umwege.
           </p>
 
           <div class="hero-actions">
             <a class="btn-primary" href="tel:+491234567890">📞 Jetzt anrufen</a>
-            <a class="btn-secondary" href="#leistungen">Leistungen ansehen</a>
+            <a class="btn-secondary" href="https://wa.me/491234567890?text=Hallo,%20ich%20brauche%20mobile%20Pannenhilfe%20in%20Kernen.">WhatsApp schreiben</a>
             <a class="btn-secondary" href="#preise">Preise ansehen</a>
           </div>
 
           <div class="hero-stats">
             <div class="stat">
               <strong>Schnell</strong>
-              <span>Direkte Hilfe vor Ort</span>
+              <span>Direkte Hilfe vor Ort ohne Werkstattweg</span>
             </div>
             <div class="stat">
-              <strong>Lokal</strong>
-              <span>Kernen &amp; Umgebung</span>
+              <strong>Transparent</strong>
+              <span>Klare Preise und Anfahrtspauschalen</span>
             </div>
             <div class="stat">
               <strong>Mobil</strong>
-              <span>Zu Ihnen nach Hause</span>
+              <span>Hilfe in Kernen und Umgebung</span>
             </div>
           </div>
         </div>
@@ -829,7 +992,7 @@
                 <div class="icon-box">🚗⚠️</div>
                 <div>
                   <h3>Pannenhilfe</h3>
-                  <p>Mobile Unterstützung bei kleineren Problemen – inkl. Reifen flicken (Nagel/Schraube) und schnelle Hilfe vor Ort.</p>
+                  <p>Mobile Unterstützung bei kleineren Problemen – inkl. Reifen flicken bei Nagel oder Schraube.</p>
                 </div>
               </div>
 
@@ -842,6 +1005,25 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-band section-padding">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-card">
+          <strong>Schnell vor Ort</strong>
+          <p>Direkte Hilfe in Kernen und Umgebung – ohne unnötige Umwege und ohne Werkstatttermin.</p>
+        </div>
+        <div class="trust-card">
+          <strong>Faire Preise</strong>
+          <p>Klare, transparente Preisstruktur für Anfahrt, Starthilfe, Radwechsel und Diagnose.</p>
+        </div>
+        <div class="trust-card">
+          <strong>Mobil & flexibel</strong>
+          <p>Ich komme direkt zu Ihnen nach Hause oder zum Standort Ihres Fahrzeugs.</p>
         </div>
       </div>
     </div>
@@ -873,7 +1055,7 @@
         <div class="card">
           <div class="icon-dark">🚗⚠️</div>
           <h3>Pannenhilfe</h3>
-          <p>Mobile Unterstützung bei kleineren Problemen – inkl. Reifen flicken (Nagel/Schraube) und schnelle Hilfe vor Ort.</p>
+          <p>Mobile Unterstützung bei kleineren Problemen – inkl. Reifen flicken bei Nagel oder Schraube.</p>
         </div>
 
         <div class="card">
@@ -890,36 +1072,20 @@
       <div class="steps">
         <div class="step">
           <div class="number">01</div>
-          <h3>Anrufen</h3>
-          <p>Kurz schildern, was los ist, und ich mache mich auf den Weg.</p>
+          <h3>Anrufen oder schreiben</h3>
+          <p>Kurz schildern, was los ist, und ich melde mich direkt mit einer Einschätzung zurück.</p>
         </div>
 
         <div class="step">
           <div class="number">02</div>
           <h3>Vor Ort helfen</h3>
-          <p>Ich komme direkt zu Ihnen und kümmere mich um das Problem.</p>
+          <p>Ich komme direkt zu Ihnen und kümmere mich vor Ort um das Problem.</p>
         </div>
 
         <div class="step">
           <div class="number">03</div>
           <h3>Weiterfahren</h3>
-          <p>Schnell zurück auf die Straße – ohne unnötigen Stress.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="kontakt" class="light section-padding">
-    <div class="container">
-      <div class="contact-wrap">
-        <h2>Kontakt</h2>
-        <p>
-          Für schnelle Hilfe erreichen Sie mich direkt telefonisch oder per WhatsApp.
-        </p>
-
-        <div class="contact-buttons">
-          <a class="contact-btn dark" href="tel:+491234567890">📞 +49 123 4567890</a>
-          <a class="contact-btn green" href="https://wa.me/491234567890">WhatsApp schreiben</a>
+          <p>Schnell zurück auf die Straße – ohne unnötigen Stress und ohne lange Wartezeit.</p>
         </div>
       </div>
     </div>
@@ -993,11 +1159,59 @@
     </div>
   </section>
 
-  <section id="impressum" class="light section-padding" style="padding-top:0;">
+  <section class="light section-padding">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini-badge">Häufige Fragen</div>
+        <h2>FAQ</h2>
+        <p>Die wichtigsten Fragen direkt beantwortet.</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Wie schnell sind Sie vor Ort?</h3>
+          <p>Das hängt von Ihrem Standort und meiner aktuellen Auslastung ab. In der Regel melde ich mich schnell mit einer realistischen Einschätzung.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Kann ich auch nur für Radwechsel buchen?</h3>
+          <p>Ja, der mobile Radwechsel kann auch unabhängig von einer Pannenhilfe gebucht werden.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Was ist bei der OBD2 Diagnose möglich?</h3>
+          <p>Fehlerspeicher auslesen und löschen sowie eine erste Einschätzung direkt vor Ort.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Wie bezahle ich?</h3>
+          <p>Am besten direkt vor Ort nach dem Einsatz. Klare Preise vermeiden Missverständnisse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="light section-padding">
     <div class="container">
       <div class="contact-wrap">
+        <h2>Kontakt</h2>
+        <p>
+          Für schnelle Hilfe erreichen Sie mich direkt telefonisch oder per WhatsApp.
+        </p>
+
+        <div class="contact-buttons">
+          <a class="contact-btn dark" href="tel:+491234567890">📞 +49 123 4567890</a>
+          <a class="contact-btn green" href="https://wa.me/491234567890?text=Hallo,%20ich%20brauche%20mobile%20Pannenhilfe%20in%20Kernen.">WhatsApp schreiben</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="impressum" class="light section-padding" style="padding-top:0;">
+    <div class="container">
+      <div class="legal-wrap">
         <h2>Impressum</h2>
-        <p style="text-align:left; max-width:none;">
+        <p>
           <strong>Mobiler Pannen- &amp; Radwechselservice - Kernen</strong><br><br>
           Max Mustermann<br>
           Musterstraße 1<br>
@@ -1015,9 +1229,9 @@
 
   <section id="datenschutz" class="light section-padding" style="padding-top:0;">
     <div class="container">
-      <div class="contact-wrap">
+      <div class="legal-wrap">
         <h2>Datenschutz</h2>
-        <p style="text-align:left; max-width:none;">
+        <p>
           Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br><br>
 
           Max Mustermann<br>
@@ -1041,6 +1255,11 @@
   <footer>
     <div class="container footer-inner">© 2026 Mobiler Pannen- &amp; Radwechselservice - Kernen</div>
   </footer>
+
+  <div class="mobile-bar">
+    <a class="call" href="tel:+491234567890">📞 Anrufen</a>
+    <a class="whatsapp" href="https://wa.me/491234567890?text=Hallo,%20ich%20brauche%20mobile%20Pannenhilfe%20in%20Kernen.">WhatsApp</a>
+  </div>
 
   <script>
     function berechneAnfahrt() {
