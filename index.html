@@ -129,15 +129,16 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(rgba(2, 6, 23, 0.78), rgba(2, 6, 23, 0.8)),
-        url("hintergrund.jpg") no-repeat 30% center;
-      background-size: cover;
+        linear-gradient(rgba(2, 6, 23, 0.55), rgba(2, 6, 23, 0.62)),
+        url("hintergrund.jpg") no-repeat center center;
+      background-size: contain;
+      background-color: #020617;
     }
 
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(2, 6, 23, 0.92), rgba(2, 6, 23, 0.45));
+      background: linear-gradient(to right, rgba(2, 6, 23, 0.82), rgba(2, 6, 23, 0.38));
     }
 
     .hero-content {
@@ -711,7 +712,9 @@
       }
 
       .hero-bg {
-        background-position: 25% top;
+        background-position: center top;
+        background-size: contain;
+        background-color: #020617;
       }
 
       .hero-content {
@@ -866,7 +869,9 @@
       }
 
       .hero-bg {
-        background-position: 20% top;
+        background-position: center top;
+        background-size: contain;
+        background-color: #020617;
       }
 
       .hero h1 {
