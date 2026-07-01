@@ -51,19 +51,29 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 18px;
       min-width: 0;
     }
 
-    .brand img {
+    .brand-logo {
       width: 92px;
       height: 92px;
-      object-fit: contain;
+      border-radius: 22px;
+      overflow: hidden;
       background: #fff;
-      border-radius: 20px;
-      padding: 4px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
       flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-logo img {
+      width: 125%;
+      height: 125%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     .brand-title {
@@ -136,7 +146,7 @@
           rgba(2, 6, 23, 0.25) 42%,
           rgba(2, 6, 23, 0.08) 100%
         ),
-        url("hintergrund.jpg?v=2") no-repeat 68% 78%;
+        url("/hintergrund.jpg?v=4") no-repeat 62% 88%;
       background-size: cover;
       background-color: #020617;
       filter: brightness(1.03) contrast(1.05);
@@ -738,6 +748,17 @@
         width: 100%;
       }
 
+      .brand-logo {
+        width: 76px;
+        height: 76px;
+        border-radius: 18px;
+      }
+
+      .brand-logo img {
+        width: 125%;
+        height: 125%;
+      }
+
       .top-actions {
         width: 100%;
         flex-direction: column;
@@ -754,7 +775,7 @@
       }
 
       .hero-bg {
-        background-position: 58% 72%;
+        background-position: 55% 82%;
         background-size: cover;
         filter: brightness(0.96) contrast(1.04);
       }
@@ -821,12 +842,6 @@
 
       .brand-subtitle {
         font-size: 14px;
-      }
-
-      .brand img {
-        width: 68px;
-        height: 68px;
-        border-radius: 16px;
       }
 
       .hero-card,
@@ -907,9 +922,19 @@
         width: min(1240px, calc(100% - 20px));
       }
 
-      .brand img {
-        width: 64px;
-        height: 64px;
+      .brand {
+        gap: 12px;
+      }
+
+      .brand-logo {
+        width: 70px;
+        height: 70px;
+        border-radius: 16px;
+      }
+
+      .brand-logo img {
+        width: 130%;
+        height: 130%;
       }
 
       .brand-title {
@@ -917,7 +942,7 @@
       }
 
       .hero-bg {
-        background-position: 54% 70%;
+        background-position: 52% 78%;
         background-size: cover;
         filter: brightness(0.94) contrast(1.03);
       }
@@ -971,7 +996,10 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <img src="Logo.jpeg?v=2" alt="Logo" />
+        <div class="brand-logo">
+          <img src="/Logo.jpeg?v=5" alt="Logo" />
+        </div>
+
         <div>
           <div class="brand-title">Mobiler Pannen- &amp; Radwechselservice - Kernen</div>
           <div class="brand-subtitle">Schnell &amp; zuverlässig</div>
